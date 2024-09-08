@@ -3,10 +3,7 @@ require 'bundler/setup'
 require 'rspec/core/rake_task'
 require 'rubocop/rake_task'
 require 'wwtd/tasks'
-require 'travis'
 require File.expand_path('../lib/cequel/version', __FILE__)
-
-RUBY_VERSIONS = YAML.load_file(File.expand_path('../.travis.yml', __FILE__))['rvm']
 
 task default: :test
 
@@ -118,4 +115,3 @@ task :verify_changelog do
     abort "Changelog is not up-to-date."
   end
 end
-
